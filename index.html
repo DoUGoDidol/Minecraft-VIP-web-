@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b100d">
+  <meta name="description" content="BLOCKVERSE 方块宇宙——探索 Minecraft 的方块、群系、生物与无限可能。">
+  <title>BLOCKVERSE — 方块宇宙</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div id="cursor-glow" aria-hidden="true"></div>
+  <div id="particles" aria-hidden="true"></div>
+
+  <div class="boot-screen" id="boot-screen">
+    <div class="boot-mark">BV<span>_</span></div>
+    <div class="boot-line"><span id="boot-text">正在生成世界区块</span><b id="boot-percent">0%</b></div>
+    <div class="boot-track"><i id="boot-progress"></i></div>
+    <div class="boot-sub">MINECRAFT INSPIRED EXPERIENCE / BUILD 1.21</div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="BLOCKVERSE 首页">
+      <span class="brand-cube"><i></i></span>
+      <span class="brand-copy"><b>BLOCK<span>VERSE</span></b><small>YOUR WORLD. YOUR RULES.</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a class="nav-link active" href="#home"><span>01</span> 首页</a>
+      <a class="nav-link" href="#world"><span>02</span> 世界档案</a>
+      <a class="nav-link" href="#blocks"><span>03</span> 方块图鉴</a>
+      <a class="nav-link" href="#mobs"><span>04</span> 生物图鉴</a>
+      <a class="nav-link" href="#craft"><span>05</span> 合成实验室</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button sound-toggle" id="sound-toggle" aria-label="切换环境音" title="环境音"><span class="sound-bars"><i></i><i></i><i></i><i></i></span></button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="打开菜单"><span></span><span></span></button>
+      <a class="play-button" href="#world"><span class="play-dot"></span> 开始探索 <b>↗</b></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="status-dot"></span> WORLD STATUS: ONLINE <span class="eyebrow-sep">/</span> JAVA & BEDROCK</div>
+        <h1>世界由你<br><span class="outline-word">亲手构筑</span><span class="title-period">.</span></h1>
+        <p class="hero-description">从第一块泥土，到跨越维度的宏伟工程。<br>每一个方块，都是无限可能的起点。</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#world"><span class="btn-icon">▶</span> 进入方块世界 <span class="btn-arrow">↗</span></a>
+          <a class="btn btn-ghost" href="#blocks"><span class="grid-icon">▦</span> 浏览方块图鉴</a>
+        </div>
+        <div class="hero-stats">
+          <div><b data-count="1000" data-suffix="+">0</b><span>可探索方块</span></div>
+          <div><b data-count="3">0</b><span>主要维度</span></div>
+          <div><b data-count="∞">∞</b><span>创造可能</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="像素风方块世界插画">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="sun-glow"></div>
+        <div class="floating-label label-a"><span class="label-dot"></span> BIOME DETECTED <b>PLAINS</b></div>
+        <div class="floating-label label-b"><span>⌁</span> Y: <b>72</b> <i>XYZ</i></div>
+        <div class="voxel-world">
+          <div class="voxel-cube cube-grass cube-main"><span class="face top"></span><span class="face front"></span><span class="face side"></span></div>
+          <div class="voxel-cube cube-stone"><span class="face top"></span><span class="face front"></span><span class="face side"></span></div>
+          <div class="voxel-cube cube-diamond"><span class="face top"></span><span class="face front"></span><span class="face side"></span></div>
+          <div class="voxel-cube cube-dirt"><span class="face top"></span><span class="face front"></span><span class="face side"></span></div>
+          <div class="voxel-cube cube-leaf"><span class="face top"></span><span class="face front"></span><span class="face side"></span></div>
+          <div class="voxel-cube cube-lava"><span class="face top"></span><span class="face front"></span><span class="face side"></span></div>
+          <div class="voxel-cube cube-small"><span class="face top"></span><span class="face front"></span><span class="face side"></span></div>
+          <div class="pixel-star star-one">✦</div><div class="pixel-star star-two">✧</div><div class="pixel-star star-three">✦</div>
+        </div>
+        <div class="art-caption"><span class="caption-line"></span><span>FIG. 001</span><b>THE OVERWORLD</b><small>GENERATED WITH CURIOSITY</small></div>
+      </div>
+      <div class="hero-bottom"><span>SCROLL TO DISCOVER</span><div class="scroll-line"><i></i></div><span class="coordinates">X 124.8 / Y 72.0 / Z -38.2</span></div>
+      <div class="hero-corner corner-tl">BV / 001</div><div class="hero-corner corner-br">EST. 2009 — STILL BUILDING</div>
+    </section>
+
+    <section class="ticker" aria-label="世界格言"><div class="ticker-track"><span>⛏ MINE DEEPER</span><i>✳</i><span>BUILD BIGGER</span><i>✳</i><span>EXPLORE FURTHER</span><i>✳</i><span>CREATE WITHOUT LIMITS</span><i>✳</i><span>⛏ MINE DEEPER</span><i>✳</i><span>BUILD BIGGER</span><i>✳</i><span>EXPLORE FURTHER</span><i>✳</i><span>CREATE WITHOUT LIMITS</span><i>✳</i></div></section>
+
+    <section class="section world-section" id="world">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="section-index">01 / THE UNIVERSE</span></div><h2>不止一个<span class="green">世界</span></h2></div>
+        <p>越过熟悉的地平线。每一个维度，<br>都有独一无二的规则与秘密。</p>
+      </div>
+      <div class="dimension-grid">
+        <article class="dimension-card overworld-card tilt-card" data-dimension="overworld">
+          <div class="card-topline"><span>DIMENSION_01</span><span class="live-tag">● ACCESSIBLE</span></div>
+          <div class="dimension-art art-overworld"><div class="pixel-sun"></div><div class="pixel-cloud cloud-a"></div><div class="pixel-cloud cloud-b"></div><div class="mountain mountain-a"></div><div class="mountain mountain-b"></div><div class="terrain"></div><div class="tree tree-a"></div><div class="tree tree-b"></div></div>
+          <div class="dimension-info"><div><span class="micro-label">THE BEGINNING</span><h3>主世界 <small>OVERWORLD</small></h3></div><span class="card-arrow">↗</span></div>
+          <p>森林、海洋、山脉与无数未知。冒险，从脚下这片土地开始。</p>
+          <div class="card-meta"><span>◈ 多样群系</span><span>◈ 生存起点</span><span>◈ 无限地形</span></div>
+        </article>
+        <article class="dimension-card nether-card tilt-card" data-dimension="nether">
+          <div class="card-topline"><span>DIMENSION_02</span><span class="danger-tag">▲ HIGH RISK</span></div>
+          <div class="dimension-art art-nether"><div class="nether-glow"></div><div class="nether-rock rock-a"></div><div class="nether-rock rock-b"></div><div class="lava-fall"></div><div class="nether-portal"></div><div class="embers">✦　·　✧　·　✦</div></div>
+          <div class="dimension-info"><div><span class="micro-label">THE INFERNO</span><h3>下界 <small>THE NETHER</small></h3></div><span class="card-arrow">↗</span></div>
+          <p>熔岩翻涌，古老遗迹沉睡。带上勇气，也带上足够的方块。</p>
+          <div class="card-meta"><span>◈ 烈焰之地</span><span>◈ 远古残骸</span><span>◈ 传送通道</span></div>
+        </article>
+        <article class="dimension-card end-card tilt-card" data-dimension="end">
+          <div class="card-topline"><span>DIMENSION_03</span><span class="locked-tag">◈ ENDGAME</span></div>
+          <div class="dimension-art art-end"><div class="end-moon"></div><div class="end-island island-a"></div><div class="end-island island-b"></div><div class="end-tower tower-a"></div><div class="end-tower tower-b"></div><div class="end-dragon">⟡</div><div class="end-stars">·　✦　　·　✧　　·</div></div>
+          <div class="dimension-info"><div><span class="micro-label">THE LAST FRONTIER</span><h3>末地 <small>THE END</small></h3></div><span class="card-arrow">↗</span></div>
+          <p>虚空之上的终极试炼。找到要塞，直面传说中的末影龙。</p>
+          <div class="card-meta"><span>◈ 末影之地</span><span>◈ 紫颂植物</span><span>◈ 终极挑战</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section blocks-section" id="blocks">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="section-index">02 / BLOCK DATABASE</span></div><h2>万物皆可<span class="green">成方块</span></h2></div>
+        <p>世界的基本单位，也是想象力的积木。<br>点击任意方块，查看它的档案。</p>
+      </div>
+      <div class="block-toolbar"><div class="filter-tabs" id="block-filters"><button class="filter-tab active" data-filter="all">全部 <span>08</span></button><button class="filter-tab" data-filter="nature">自然</button><button class="filter-tab" data-filter="ore">矿物</button><button class="filter-tab" data-filter="utility">功能</button></div><label class="search-box"><span>⌕</span><input id="block-search" type="search" placeholder="搜索方块名称..." aria-label="搜索方块"><kbd>⌘ K</kbd></label></div>
+      <div class="block-grid" id="block-grid">
+        <button class="block-item" data-name="草方块" data-type="nature" data-color="#6ebd45" data-desc="地表最经典的方块。草会在适宜条件下蔓延，是建立家园的起点。" data-hardness="0.6" data-tool="锹" data-drop="泥土"><span class="block-visual grass-visual"><i></i></span><b>草方块</b><small>GRASS BLOCK</small><span class="block-rarity common">COMMON</span></button>
+        <button class="block-item" data-name="钻石矿石" data-type="ore" data-color="#40e8d1" data-desc="珍贵的矿物资源。深入地下寻找它，记得带上合适的镐。" data-hardness="3.0" data-tool="铁镐或更好" data-drop="钻石"><span class="block-visual diamond-visual"><i></i></span><b>钻石矿石</b><small>DIAMOND ORE</small><span class="block-rarity rare">RARE</span></button>
+        <button class="block-item" data-name="深板岩" data-type="nature" data-color="#5a5967" data-desc="深层地下常见的坚硬岩石，纹理沉稳，适合打造宏伟建筑。" data-hardness="3.0" data-tool="镐" data-drop="深板岩"><span class="block-visual slate-visual"><i></i></span><b>深板岩</b><small>DEEPSLATE</small><span class="block-rarity common">COMMON</span></button>
+        <button class="block-item" data-name="红石粉" data-type="utility" data-color="#ff4b4b" data-desc="为机械注入逻辑与能量。用它连接组件，构筑自动化奇迹。" data-hardness="0" data-tool="任意工具" data-drop="红石粉"><span class="block-visual redstone-visual"><i></i></span><b>红石元件</b><small>REDSTONE</small><span class="block-rarity tech">TECH</span></button>
+        <button class="block-item" data-name="黑曜石" data-type="nature" data-color="#6d49aa" data-desc="由水与熔岩相遇形成的坚固方块，是下界传送门的重要材料。" data-hardness="50" data-tool="钻石镐或更好" data-drop="黑曜石"><span class="block-visual obsidian-visual"><i></i></span><b>黑曜石</b><small>OBSIDIAN</small><span class="block-rarity rare">RARE</span></button>
+        <button class="block-item" data-name="金块" data-type="ore" data-color="#f6c94a" data-desc="闪耀的贵金属方块。既是财富象征，也能用于多种合成。" data-hardness="3" data-tool="镐" data-drop="金块"><span class="block-visual gold-visual"><i></i></span><b>金块</b><small>GOLD BLOCK</small><span class="block-rarity uncommon">UNCOMMON</span></button>
+        <button class="block-item" data-name="附魔台" data-type="utility" data-color="#9a64ff" data-desc="让工具与武器获得神秘力量。书页翻动，符文环绕，知识即力量。" data-hardness="5" data-tool="镐" data-drop="附魔台"><span class="block-visual enchant-visual"><i>✧</i></span><b>附魔台</b><small>ENCHANTING TABLE</small><span class="block-rarity magic">ARCANE</span></button>
+        <button class="block-item" data-name="发光方块" data-type="utility" data-color="#ffb04a" data-desc="照亮黑暗角落，为地下基地和建筑提供稳定光源。" data-hardness="0.3" data-tool="任意工具" data-drop="荧石粉"><span class="block-visual glow-visual"><i></i></span><b>荧石</b><small>GLOWSTONE</small><span class="block-rarity uncommon">UNCOMMON</span></button>
+      </div>
+      <div class="block-detail" id="block-detail" aria-live="polite"><div class="detail-symbol">▦</div><div class="detail-main"><span class="micro-label">BLOCK INSPECTOR / READY</span><h3>选择一个方块</h3><p>点击上方任意方块，解锁它的详细档案。</p></div><div class="detail-hint">SELECT BLOCK <span>↖</span></div></div>
+    </section>
+
+    <section class="section mobs-section" id="mobs">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="section-index">03 / CREATURE INDEX</span></div><h2>并肩而行，或<span class="green">小心身后</span></h2></div>
+        <p>从可靠的伙伴到黑暗中的威胁，<br>每个生物都让世界更加鲜活。</p>
+      </div>
+      <div class="mob-feature">
+        <div class="mob-display" id="mob-display"><div class="mob-scan"></div><div class="mob-halo"></div><div class="pixel-mob creeper-pixel"><i></i><i></i><i></i><i></i><i></i></div><div class="mob-shadow"></div><div class="mob-coordinate">ENTITY ID: 002 / OVERWORLD</div></div>
+        <div class="mob-info"><div class="eyebrow"><span class="status-dot danger-dot"></span> ENTITY DATABASE <span class="eyebrow-sep">/</span> HOSTILE</div><div class="mob-number">MOB_002</div><h3 id="mob-title">苦力怕<span>.</span></h3><p id="mob-desc">悄无声息地接近，然后用一声熟悉的嘶嘶声改变地形。保持距离，留意周围环境。</p><div class="mob-stats"><div><span>威胁等级</span><div class="threat-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div><div><span>常见地点</span><b id="mob-location">主世界 · 夜晚</b></div><div><span>行为类型</span><b id="mob-behavior">接近后爆炸</b></div></div><div class="mob-picker" id="mob-picker"><button class="mob-chip active" data-mob="creeper"><span class="mob-mini mini-creeper">▪</span> 苦力怕</button><button class="mob-chip" data-mob="enderman"><span class="mob-mini mini-enderman">▪</span> 末影人</button><button class="mob-chip" data-mob="fox"><span class="mob-mini mini-fox">▪</span> 狐狸</button><button class="mob-chip" data-mob="bee"><span class="mob-mini mini-bee">▪</span> 蜜蜂</button></div></div>
+      </div>
+    </section>
+
+    <section class="section craft-section" id="craft">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="section-index">04 / CRAFTING LAB</span></div><h2>合成你的<span class="green">下一件装备</span></h2></div>
+        <p>把材料放进工作台。<br>配方正确，奇迹就会发生。</p>
+      </div>
+      <div class="craft-lab">
+        <div class="craft-side"><span class="micro-label">RECIPE SIMULATOR v1.0</span><h3>工作台<span class="green">.</span></h3><p>选择配方，观察材料如何变成新的物品。这是一个可交互的配方演示。</p><div class="recipe-list"><button class="recipe-button active" data-recipe="pickaxe"><span class="recipe-icon">⛏</span><span><b>钻石镐</b><small>DIAMOND PICKAXE</small></span><span>↗</span></button><button class="recipe-button" data-recipe="torch"><span class="recipe-icon">♨</span><span><b>火把</b><small>TORCH</small></span><span>↗</span></button><button class="recipe-button" data-recipe="chest"><span class="recipe-icon">▣</span><span><b>箱子</b><small>CHEST</small></span><span>↗</span></button></div></div>
+        <div class="craft-board"><div class="craft-board-head"><span>CRAFTING TABLE</span><span class="board-dots"><i></i><i></i><i></i></span></div><div class="craft-workspace"><div class="craft-grid" id="craft-grid"></div><div class="craft-arrow">➜</div><div class="craft-result" id="craft-result">⛏</div></div><div class="craft-status"><span class="status-dot"></span><span id="craft-status-text">配方已载入 / DIAMOND PICKAXE</span><button id="craft-button">合成物品 <b>↗</b></button></div></div>
+      </div>
+    </section>
+
+    <section class="quote-section"><div class="quote-mark">“</div><p>你不需要一个完美的世界。<br><span>你只需要开始放下第一块方块。</span></p><div class="quote-rule"></div><small>BLOCKVERSE FIELD NOTE / 0001</small><div class="quote-pixels">▧ ▨ ▦ ▩ ▧ ▨ ▦ ▩</div></section>
+
+    <section class="section terminal-section" id="terminal">
+      <div class="section-heading"><div><div class="eyebrow"><span class="section-index">05 / COMMAND CONSOLE</span></div><h2>输入你的<span class="green">下一步</span></h2></div><p>熟悉的命令行，新的探索入口。<br>试试下面这些世界指令。</p></div>
+      <div class="terminal-window"><div class="terminal-top"><div class="terminal-lights"><i></i><i></i><i></i></div><span>BV_TERMINAL — LOCAL SESSION</span><button id="clear-terminal">清空输出 ×</button></div><div class="terminal-output" id="terminal-output"><p><span class="term-green">BLOCKVERSE OS [Version 1.21.0]</span></p><p>输入 <b>help</b> 查看可用指令。此终端为互动演示，不会连接真实游戏。</p></div><form id="terminal-form"><span class="prompt">player@blockverse <b>~</b> $</span><input id="terminal-input" autocomplete="off" spellcheck="false" placeholder="输入 help 并按回车..." aria-label="输入命令"><button aria-label="执行命令">执行 ↗</button></form><div class="terminal-suggestions"><button data-command="help">help</button><button data-command="world">world</button><button data-command="inventory">inventory</button><button data-command="time set day">time set day</button><button data-command="summon creeper">summon creeper</button></div></div>
+    </section>
+
+    <section class="final-cta"><div class="cta-glow"></div><span class="micro-label">YOUR ADVENTURE STARTS HERE</span><h2>下一块方块，<br><span>由你决定。</span></h2><a href="#home" class="btn btn-primary">回到世界起点 <span class="btn-arrow">↑</span></a><div class="cta-grid-decoration"></div></section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-cube"><i></i></span><span class="brand-copy"><b>BLOCK<span>VERSE</span></b><small>YOUR WORLD. YOUR RULES.</small></span></a><p>一个献给方块世界与无限创造力的互动作品。</p><div class="footer-right"><span>FAN-MADE EXPERIENCE</span><span>NOT AN OFFICIAL MINECRAFT PRODUCT</span><a href="#home">BACK TO TOP ↑</a></div><div class="footer-bottom"><span>© 2026 BLOCKVERSE CONCEPT</span><span>BUILT WITH CURIOSITY <b>◆</b></span></div></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/effects.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
